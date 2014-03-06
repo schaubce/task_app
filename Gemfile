@@ -4,6 +4,7 @@ gem 'rails', '3.2.16'
 gem 'rubycas-client'
 gem 'person_record', :git=> 'https://github.com/haynescw/PersonRecord.git'
 gem 'foundation-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
