@@ -1,7 +1,11 @@
 TaskApp::Application.routes.draw do
-  get "users/new"
-
+  resources :users, :only => [:edit, :update, :destroy]
+  
+  resources :tasks, :only=> [:create, :edit, :destroy, :show]
+  
   root :to=> 'static_pages#home'
+
+  # map.connect '/user/edit', :controller => 'users', :action => 'edit'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

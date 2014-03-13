@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :task_name
       t.string :category
       t.integer :user_id
-      t.string :due_date
+      t.date :due_date
       t.boolean :complete
       t.string :priority
 

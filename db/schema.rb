@@ -10,25 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140306192728) do
+ActiveRecord::Schema.define(:version => 20140313173458) do
 
   create_table "tasks", :force => true do |t|
     t.string   "task_name"
     t.string   "category"
-    t.string   "user_id"
-    t.string   "due_date"
-    t.string   "complete"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.date     "due_date"
+    t.boolean  "complete"
     t.string   "priority"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
   end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.boolean  "active_user"
   end
 
 end
