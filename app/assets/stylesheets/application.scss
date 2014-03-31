@@ -21,8 +21,12 @@
 $include-html-top-bar-classes: $include-html-classes;
 
 /* MY STYLES */
+#task_header{
+ font-size:1.9rem;
+ text-decoration: underline;
+}
 
-#task-container{
+#tasks_Container{
   width:80%;
   float:right;
   font-size: 1.2rem; 

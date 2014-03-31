@@ -1,7 +1,9 @@
 TaskApp::Application.routes.draw do
+  get "categories/new"
+
   resources :users, :only => [:edit, :update, :destroy]
   
-  resources :tasks, :only=> [:create, :edit, :destroy, :show]
+  resources :tasks
   
   root :to=> 'static_pages#home'
 

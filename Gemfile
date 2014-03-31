@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.16'
 gem 'rubycas-client'
-gem 'person_record', :git=> 'https://github.com/haynescw/PersonRecord.git'
+gem 'rubyzip', '0.9.5'
+# gem 'person_record', :git=> 'https://github.com/haynescw/PersonRecord.git'
 gem 'foundation-rails'
 gem 'simple_form'
 
 group :development, :test do
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails', '2.11.0' 
+  gem 'factory_girl_rails', '1.7.0'
+  gem 'database_cleaner', '0.7.0'
 end
 
 # Bundle edge Rails instead:

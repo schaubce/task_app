@@ -1,0 +1,5 @@
+<div>
+  <%= simple_form_for @task do |f| %>
+    <%= f.input :task_name %>
+    <%= collection_select(:category) %>
+    <%= f.input :description %> 

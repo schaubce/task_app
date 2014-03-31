@@ -1,0 +1,19 @@
+<!-- This is where the form will be made for edit/new Task --> 
+<%= form_for(@task) do |task| %>
+  <%= task.label :task_Name %>
+  <%= task.text_field :task_name %>
+
+  <%= task.label :category %>
+  <%= collection_select(:task, :category, @current_user.categories, :id, :name, :prompt=>true) %>
+
+  <%= task.label :description %>
+  <%= text_area(:task, :description)    %>
+
+  <!--  <%= task.label :Subtasks %>  -->
+  <!-- <%= task.text_field :subtask %> -->
+
+  <%= task.button :submit %>
+<% end %> 
+
+
+

@@ -10,11 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140313173458) do
+ActiveRecord::Schema.define(:version => 20140328182622) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subtasks", :force => true do |t|
+    t.string   "name"
+    t.integer  "task_id"
+    t.boolean  "complete"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tasks", :force => true do |t|
     t.string   "task_name"
-    t.string   "category"
     t.integer  "user_id"
     t.date     "due_date"
     t.boolean  "complete"
@@ -22,7 +35,18 @@ ActiveRecord::Schema.define(:version => 20140313173458) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "description"
+    t.integer  "category_id"
   end
+
+  create_table "user_categories", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "user_categories", ["category_id"], :name => "index_user_categories_on_category_id"
+  add_index "user_categories", ["user_id"], :name => "index_user_categories_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
